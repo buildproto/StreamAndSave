@@ -43,6 +43,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
     }
+    
+    func application(application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: () -> Void) {
+        DLog("identifier: \(identifier)")
+        // From apple docs:
+        /* https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:handleEventsForBackgroundURLSession:completionHandler:
+         If a URL session finishes its work when your app is not running, the system launches your app in the background so that it can process the event. In that situation, use the provided identifier to create a new NSURLSessionConfiguration and NSURLSession object. You must configure the other options of your NSURLSessionConfiguration object in the same way that you did when you started the uploads or downloads. Upon creating and configuring the new NSURLSession object, that object calls the appropriate delegate methods to process the events.
+ 
+         If your app already has a session object with the specified identifier and is running or suspended, you do not need to create a new session object using this method. Suspended apps are moved into the background. As soon as the app is running again, the NSURLSession object with the identifier receives the events and processes them normally.
+ 
+         At launch time, the app does not call this method if there are uploads or downloads in progress but not yet finished. If you want to display the current progress of those transfers in your app’s user interface, you must recreate the session object yourself. In that situation, cache the identifier value persistently and use it to recreate your session object.
+         */
+        /* https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionDelegate_protocol/index.html#//apple_ref/occ/intfm/NSURLSessionDelegate/URLSessionDidFinishEventsForBackgroundURLSession:
+         IMPORTANT
+         Because the provided completion handler is part of UIKit, you must call it on your main thread. For example:
+ 
+         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            storedHandler();
+         }];
+         */
+        completionHandler()
+    }
 
     // MARK: - Core Data stack
 

@@ -15,6 +15,8 @@
 		F9E9C9041CF7887E001AA6FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9E9C9021CF7887E001AA6FE /* LaunchScreen.storyboard */; };
 		F9E9C90F1CF7887E001AA6FE /* StreamAndSaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E9C90E1CF7887E001AA6FE /* StreamAndSaveTests.swift */; };
 		F9E9C91A1CF7887E001AA6FE /* StreamAndSaveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E9C9191CF7887E001AA6FE /* StreamAndSaveUITests.swift */; };
+		F9E9C9281CF78F0A001AA6FE /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E9C9271CF78F0A001AA6FE /* Utilities.swift */; };
+		F9E9C92C1CF89C8A001AA6FE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9E9C92B1CF89C8A001AA6FE /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		F9E9C9151CF7887E001AA6FE /* StreamAndSaveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StreamAndSaveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9E9C9191CF7887E001AA6FE /* StreamAndSaveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamAndSaveUITests.swift; sourceTree = "<group>"; };
 		F9E9C91B1CF7887E001AA6FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9E9C9271CF78F0A001AA6FE /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		F9E9C92B1CF89C8A001AA6FE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9E9C92C1CF89C8A001AA6FE /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +84,7 @@
 		F9E9C8EA1CF7887E001AA6FE = {
 			isa = PBXGroup;
 			children = (
+				F9E9C92B1CF89C8A001AA6FE /* AudioToolbox.framework */,
 				F9E9C8F51CF7887E001AA6FE /* StreamAndSave */,
 				F9E9C90D1CF7887E001AA6FE /* StreamAndSaveTests */,
 				F9E9C9181CF7887E001AA6FE /* StreamAndSaveUITests */,
@@ -99,6 +105,7 @@
 		F9E9C8F51CF7887E001AA6FE /* StreamAndSave */ = {
 			isa = PBXGroup;
 			children = (
+				F9E9C9271CF78F0A001AA6FE /* Utilities.swift */,
 				F9E9C8F61CF7887E001AA6FE /* AppDelegate.swift */,
 				F9E9C8F81CF7887E001AA6FE /* ViewController.swift */,
 				F9E9C8FA1CF7887E001AA6FE /* Main.storyboard */,
@@ -261,6 +268,7 @@
 			files = (
 				F9E9C8F91CF7887E001AA6FE /* ViewController.swift in Sources */,
 				F9E9C8FF1CF7887E001AA6FE /* StreamAndSave.xcdatamodeld in Sources */,
+				F9E9C9281CF78F0A001AA6FE /* Utilities.swift in Sources */,
 				F9E9C8F71CF7887E001AA6FE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +413,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = StreamAndSave/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.proto.StreamAndSave;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -416,6 +425,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = StreamAndSave/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.proto.StreamAndSave;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
